@@ -37,8 +37,13 @@ export const signup = async (req, res) => {
     });
 
     if (newUser) {
+<<<<<<< HEAD
       await newUser.save();
       generateToken(newUser._id, res);
+=======
+      generateToken(newUser._id, res);
+      await newUser.save();
+>>>>>>> 1e60e47e1357652a56131ee0dee91460993c9b9f
       return res.status(201).json({
         message: "User created successfully",
         user: {
